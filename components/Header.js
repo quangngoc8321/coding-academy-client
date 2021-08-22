@@ -55,11 +55,15 @@ const Header = () => {
                 </MenuList>
               </Menu>
             ) : (
-              <Link href="/auth/login">
-                <a>
-                  <Button colorScheme="orange">Log in</Button>
-                </a>
-              </Link>
+              <>
+                <Link href="/auth/login">
+                  <a>
+                    <Button colorScheme="orange" ml="2">
+                      Log in
+                    </Button>
+                  </a>
+                </Link>
+              </>
             )}
           </>
         ) : (

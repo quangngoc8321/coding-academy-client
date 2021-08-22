@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CourseItem from "../components/CourseItem";
 import { Flex } from "@chakra-ui/layout";
 import client from "../libs/apolloClient";
 import { ALL_COURSES_QUERY } from "../constants/queryGrapql";
-import { Box } from "@chakra-ui/react";
+import { Box, useToast } from "@chakra-ui/react";
 import Head from "next/head";
+
 const Homepage = ({ courses }) => {
   return (
     <>

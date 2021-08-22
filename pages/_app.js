@@ -4,6 +4,7 @@ import { Container } from "@chakra-ui/react";
 import AuthContextProvider from "../components/AuthContextProvider";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import ToasterTest from "../components/ToasterTest";
 import client from "../libs/apolloClient";
 import theme from "../libs/theme";
 import "../styles/globals.css";
@@ -21,9 +22,11 @@ function MyApp({ Component, pageProps }) {
           p={4}
         >
           <AuthContextProvider>
-            <Header />
-            <Component {...pageProps} />
-            <Footer />
+            <ToasterTest>
+              <Header />
+              <Component {...pageProps} />
+              <Footer />
+            </ToasterTest>
           </AuthContextProvider>
         </Container>
       </ApolloProvider>
