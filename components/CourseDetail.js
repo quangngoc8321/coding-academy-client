@@ -121,6 +121,7 @@ const CourseDetail = ({ course }) => {
           <PaymentMethod
             courseId={courseId}
             firstLesson={chapters[0].lessons[0]}
+            createCheckOutSession={createCheckOutSession}
           />
         </Box>
 

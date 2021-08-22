@@ -44,7 +44,7 @@ const MyCoursesPage = () => {
         <meta name="keywords" content="my courses" />
       </Head>
       <AuthRoute>
-        <Stack minH="82vh">
+        <Stack minH="82vh" p="3">
           <Breadcrumb
             spacing="0.5"
             separator={<ChevronRightIcon color="gray.500" />}

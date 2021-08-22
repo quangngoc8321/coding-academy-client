@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import React, { useContext, useEffect, useState } from "react";
 import AuthContext from "../context/AuthContext";
 
-const PaymentMethod = ({ courseId, firstLesson }) => {
+const PaymentMethod = ({ courseId, firstLesson, createCheckOutSession }) => {
   const { slug: lessonSlug } = firstLesson;
   const router = useRouter();
   const { courseSlug } = router.query;
