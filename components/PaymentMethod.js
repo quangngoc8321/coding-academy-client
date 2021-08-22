@@ -52,7 +52,7 @@ const PaymentMethod = ({ courseId, firstLesson, createCheckOutSession }) => {
                   {isPaid ? (
                     <Link href={`${courseSlug}/${lessonSlug}`}>
                       <a>
-                        <Button colorScheme="teal" size="lg">
+                        <Button colorScheme="teal" size="md">
                           👉 Watch now!
                         </Button>
                       </a>
@@ -61,7 +61,7 @@ const PaymentMethod = ({ courseId, firstLesson, createCheckOutSession }) => {
                     <Button
                       colorScheme="teal"
                       onClick={() => createCheckOutSession()}
-                      size="lg"
+                      size="md"
                     >
                       👉 Buy Now
                     </Button>
@@ -72,7 +72,7 @@ const PaymentMethod = ({ courseId, firstLesson, createCheckOutSession }) => {
           ) : (
             <Link href="/auth/login">
               <a>
-                <Button colorScheme="teal" size="lg">
+                <Button colorScheme="teal" size="md">
                   👉 You need to login to pay this course
                 </Button>
               </a>

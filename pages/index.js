@@ -12,7 +12,7 @@ const Homepage = ({ courses }) => {
         <title>Home | codingAcademy</title>
         <meta name="keywords" content="tutran.dev" />
       </Head>
-      <Box minH="82vh">
+      <Box minH="82vh" py="4">
         <Flex
           justify={["center", "space-evenly", "space-evenly", "center"]}
           wrap="wrap"

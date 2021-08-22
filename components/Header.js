@@ -28,7 +28,7 @@ const Header = () => {
         </Heading>
       </Box>
       <Spacer />
-      <Box d="flex" alignItems="center">
+      <Box d="flex" alignItems="center" p="2">
         <Button onClick={toggleColorMode} mr="2">
           {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
         </Button>
