@@ -1,13 +1,14 @@
 import { Box, Container, Flex, Heading, useColorMode } from "@chakra-ui/react";
 import Head from "next/head";
 import React from "react";
+import GuestRoute from "../../components/GuestRoute";
 import RegisterForm from "../../components/RegisterForm";
 
 const RegisterPage = () => {
   const { colorMode } = useColorMode();
   const bg = colorMode === "light" ? "gray.100" : "gray.700";
   return (
-    <>
+    <GuestRoute>
       <Head>
         <title>Register | codingAcademy</title>
         <meta name="keywords" content="register" />
@@ -29,7 +30,7 @@ const RegisterPage = () => {
           </Box>
         </Flex>
       </Container>
-    </>
+    </GuestRoute>
   );
 };
 

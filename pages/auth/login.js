@@ -8,13 +8,14 @@ import {
 } from "@chakra-ui/react";
 import Head from "next/head";
 import React from "react";
+import GuestRoute from "../../components/GuestRoute";
 import LoginForm from "../../components/LoginForm";
 
 const LoginPage = () => {
   const { colorMode } = useColorMode();
   const bg = colorMode === "light" ? "gray.100" : "gray.700";
   return (
-    <>
+    <GuestRoute>
       <Head>
         <title>Login | codingAcademy</title>
         <meta name="keywords" content="login" />
@@ -37,7 +38,7 @@ const LoginPage = () => {
           </Box>
         </Flex>
       </Container>
-    </>
+    </GuestRoute>
   );
 };
 
