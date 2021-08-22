@@ -13,6 +13,7 @@ const CourseDetailPage = ({ course }) => {
       <Head>
         <title>{course.name} | tutran.dev</title>
         <meta name="keywords" content={course.name} />
+        <meta name="description" content={course.name} />
       </Head>
       <CourseDetail course={course} />
     </>

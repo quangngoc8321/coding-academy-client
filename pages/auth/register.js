@@ -12,6 +12,7 @@ const RegisterPage = () => {
       <Head>
         <title>Register | codingAcademy</title>
         <meta name="keywords" content="register" />
+        <meta name="description" content="register" />
       </Head>
       <Container>
         <Flex align="center" justify="center" minH="82vh">

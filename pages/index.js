@@ -12,6 +12,7 @@ const Homepage = ({ courses }) => {
       <Head>
         <title>Home | codingAcademy</title>
         <meta name="keywords" content="tutran.dev" />
+        <meta name="description" content="tutran.dev" />
       </Head>
       <Box minH="82vh" py="4">
         <Flex

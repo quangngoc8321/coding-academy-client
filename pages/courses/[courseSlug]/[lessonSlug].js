@@ -10,6 +10,7 @@ const LessonDetailPage = ({ course, lesson }) => {
       <Head>
         <title>{lesson.name} | codingAcademy</title>
         <meta name="keywords" content={lesson.name} />
+        <meta name="description" content={lesson.name} />
       </Head>
       <LessonDetail lesson={lesson} course={course} />
     </>

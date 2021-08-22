@@ -19,6 +19,7 @@ const LoginPage = () => {
       <Head>
         <title>Login | codingAcademy</title>
         <meta name="keywords" content="login" />
+        <meta name="description" content="login" />
       </Head>
 
       <Container>

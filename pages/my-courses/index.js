@@ -42,6 +42,7 @@ const MyCoursesPage = () => {
       <Head>
         <title>My Courses | codingAcademy</title>
         <meta name="keywords" content="my courses" />
+        <meta name="description" content="my courses" />
       </Head>
       <AuthRoute>
         <Stack minH="82vh" p="3">
