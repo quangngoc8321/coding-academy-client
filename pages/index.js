@@ -8,7 +8,10 @@ import { Box } from "@chakra-ui/react";
 const Homepage = ({ courses }) => {
   return (
     <Box minH="82vh">
-      <Flex>
+      <Flex
+        justify={["center", "space-evenly", "space-evenly", "center"]}
+        wrap="wrap"
+      >
         {courses.map((course) => (
           <CourseItem course={course} key={course.id} />
         ))}

@@ -4,7 +4,7 @@ import Link from "next/link";
 import NextImage from "next/image";
 import { Button } from "@chakra-ui/button";
 
-const CourseItem = ({ course }) => {
+const CourseItem = ({ course, isPaid }) => {
   const { name, slug, summary, image, price, totalLessons, totalDurations } =
     course;
 
@@ -25,19 +25,25 @@ const CourseItem = ({ course }) => {
 
       <Box p="6">
         <Box d="flex" alignItems="center">
-          <Stack>
-            <Badge
-              borderRadius="base"
-              px="2"
-              colorScheme="red"
-              textDecor="line-through"
-            >
-              Price: ${price}
-            </Badge>
+          {isPaid ? (
             <Badge borderRadius="base" px="2" colorScheme="green">
-              Price: ${price}
+              PAID
             </Badge>
-          </Stack>
+          ) : (
+            <Stack>
+              <Badge
+                borderRadius="base"
+                px="2"
+                colorScheme="red"
+                textDecor="line-through"
+              >
+                Price: ${price}
+              </Badge>
+              <Badge borderRadius="base" px="2" colorScheme="green">
+                Price: ${price}
+              </Badge>
+            </Stack>
+          )}
 
           <Box
             color="gray.500"
