@@ -29,6 +29,7 @@ const VideoContainer = ({ courseId, video, isPreview }) => {
         setLoading(false);
       } catch (error) {
         setIsPaid(false);
+        setLoading(false);
       }
     };
     return checkIsPaid();
