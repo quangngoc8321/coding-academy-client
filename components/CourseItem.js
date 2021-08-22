@@ -37,7 +37,7 @@ const CourseItem = ({ course, isPaid }) => {
                 colorScheme="red"
                 textDecor="line-through"
               >
-                Price: ${price}
+                Price: $99.99
               </Badge>
               <Badge borderRadius="base" px="2" colorScheme="green">
                 Price: ${price}
