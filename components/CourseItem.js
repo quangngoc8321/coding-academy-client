@@ -46,7 +46,7 @@ const CourseItem = ({ course, isPaid }) => {
           )}
 
           <Box
-            color="gray.500"
+            color="gray.400"
             fontWeight="semibold"
             letterSpacing="wide"
             fontSize="xs"

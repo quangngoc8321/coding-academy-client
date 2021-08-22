@@ -29,7 +29,7 @@ const Header = () => {
       </Box>
       <Spacer />
       <Box d="flex" alignItems="center" p="2">
-        <Button onClick={toggleColorMode} mr="2">
+        <Button onClick={toggleColorMode} mr="2" aria-label="dark mode">
           {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
         </Button>
 
