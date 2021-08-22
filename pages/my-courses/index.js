@@ -4,7 +4,7 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   Flex,
-  Heading,
+  Spinner,
   Stack,
   useColorMode,
 } from "@chakra-ui/react";
@@ -12,11 +12,11 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import CourseItem from "../../components/CourseItem";
 const MyCoursesPage = () => {
-  const [courses, setCourses] = useState([]);
+  const [courses, setCourses] = useState(null);
   useEffect(() => {
     const fetchMyCourses = async () => {
       try {
-        const url = "http://localhost:1337" + "/orders/mine";
+        const url = process.env.NEXT_PUBLIC_STRAPI_REST_API + "/orders/mine";
         const res = await fetch(url, {
           method: "GET",
           headers: {
@@ -37,7 +37,7 @@ const MyCoursesPage = () => {
   const { colorMode } = useColorMode();
   const breadcrumbColor = colorMode === "light" ? "orange.500" : "orange.400";
   return (
-    <Stack>
+    <Stack minH="82vh">
       <Breadcrumb
         spacing="0.5"
         separator={<ChevronRightIcon color="gray.500" />}
@@ -60,9 +60,14 @@ const MyCoursesPage = () => {
         justify={["center", "space-evenly", "space-evenly", "center"]}
         wrap="wrap"
       >
-        {courses.map((course) => (
-          <CourseItem course={course} key={course.id} isPaid={true} />
-        ))}
+        {courses && courses.length === 0 && (
+          <span>You dont have any courses.</span>
+        )}
+        {courses &&
+          courses.map((course) => (
+            <CourseItem course={course} key={course.id} isPaid={true} />
+          ))}
+        {!courses && <Spinner />}
       </Flex>
     </Stack>
   );
