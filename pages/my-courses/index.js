@@ -11,6 +11,7 @@ import {
 import Head from "next/head";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import AuthRoute from "../../components/AuthRoute";
 import CourseItem from "../../components/CourseItem";
 const MyCoursesPage = () => {
   const [courses, setCourses] = useState(null);
@@ -34,7 +35,6 @@ const MyCoursesPage = () => {
     };
     return fetchMyCourses();
   }, []);
-
   const { colorMode } = useColorMode();
   const breadcrumbColor = colorMode === "light" ? "orange.500" : "orange.400";
   return (
@@ -43,40 +43,41 @@ const MyCoursesPage = () => {
         <title>My Courses | codingAcademy</title>
         <meta name="keywords" content="my courses" />
       </Head>
+      <AuthRoute>
+        <Stack minH="82vh">
+          <Breadcrumb
+            spacing="0.5"
+            separator={<ChevronRightIcon color="gray.500" />}
+            fontSize={{ base: "12px", md: "14px", lg: "16px" }}
+          >
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/" as={Link}>
+                Home
+              </BreadcrumbLink>
+            </BreadcrumbItem>
 
-      <Stack minH="82vh">
-        <Breadcrumb
-          spacing="0.5"
-          separator={<ChevronRightIcon color="gray.500" />}
-          fontSize={{ base: "12px", md: "14px", lg: "16px" }}
-        >
-          <BreadcrumbItem>
-            <BreadcrumbLink href="/" as={Link}>
-              Home
-            </BreadcrumbLink>
-          </BreadcrumbItem>
+            <BreadcrumbItem isCurrentPage textTransform="capitalize">
+              <BreadcrumbLink href="#" color={breadcrumbColor}>
+                My-Courses
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+          </Breadcrumb>
 
-          <BreadcrumbItem isCurrentPage textTransform="capitalize">
-            <BreadcrumbLink href="#" color={breadcrumbColor}>
-              My-Courses
-            </BreadcrumbLink>
-          </BreadcrumbItem>
-        </Breadcrumb>
-
-        <Flex
-          justify={["center", "space-evenly", "space-evenly", "center"]}
-          wrap="wrap"
-        >
-          {courses && courses.length === 0 && (
-            <span>You dont have any courses.</span>
-          )}
-          {courses &&
-            courses.map((course) => (
-              <CourseItem course={course} key={course.id} isPaid={true} />
-            ))}
-          {!courses && <Spinner />}
-        </Flex>
-      </Stack>
+          <Flex
+            justify={["center", "space-evenly", "space-evenly", "center"]}
+            wrap="wrap"
+          >
+            {courses && courses.length === 0 && (
+              <span>You dont have any courses.</span>
+            )}
+            {courses &&
+              courses.map((course) => (
+                <CourseItem course={course} key={course.id} isPaid={true} />
+              ))}
+            {!courses && <Spinner />}
+          </Flex>
+        </Stack>
+      </AuthRoute>
     </>
   );
 };

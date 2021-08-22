@@ -19,9 +19,11 @@ import ChapterItem from "./ChapterItem";
 import AuthContext from "../context/AuthContext";
 import router from "next/router";
 import { FaCcMastercard, FaCcStripe, FaCcVisa } from "react-icons/fa";
+import PaymentMethod from "./PaymentMethod";
 
 const CourseDetail = ({ course }) => {
   const {
+    id: courseId,
     name,
     video,
     summary,
@@ -33,7 +35,6 @@ const CourseDetail = ({ course }) => {
   } = course;
   const { colorMode } = useColorMode();
   const breadcrumbColor = colorMode === "light" ? "orange.500" : "orange.400";
-  const { isAuthStateReady, user } = useContext(AuthContext);
   const createCheckOutSession = async () => {
     try {
       const url =
@@ -117,30 +118,10 @@ const CourseDetail = ({ course }) => {
               <FaCcStripe />
             </Heading>
           </Box>
-
-          <Box>
-            {isAuthStateReady && (
-              <>
-                {user ? (
-                  <Button
-                    colorScheme="teal"
-                    onClick={() => createCheckOutSession()}
-                    size="lg"
-                  >
-                    👉 Buy Now
-                  </Button>
-                ) : (
-                  <Link href="/auth/login">
-                    <a>
-                      <Button colorScheme="teal" size="lg">
-                        👉 You need to login to pay this course
-                      </Button>
-                    </a>
-                  </Link>
-                )}
-              </>
-            )}
-          </Box>
+          <PaymentMethod
+            courseId={courseId}
+            firstLesson={chapters[0].lessons[0]}
+          />
         </Box>
 
         <Stack>
