@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import client from "../libs/apolloClient";
 import theme from "../libs/theme";
-
+import "../styles/globals.css";
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider theme={theme} resetCSS>

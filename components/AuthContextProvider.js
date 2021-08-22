@@ -12,6 +12,7 @@ const AuthContextProvider = ({ children }) => {
     user: null,
     isAuthStateReady: false,
   });
+  console.log(router);
   useQuery(USER_ME, {
     onCompleted(data) {
       const { me: user } = data;
@@ -34,6 +35,7 @@ const AuthContextProvider = ({ children }) => {
         localStorage.setItem("token", jwt);
         console.log(state);
         setState({ ...state, user, isAuthStateReady: true });
+
         router.back();
       }
     },
