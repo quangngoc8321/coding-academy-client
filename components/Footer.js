@@ -5,9 +5,9 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <Center p="2">
-      &copy;2021 -{" "}
+      &copy;2021 - 💻 ✋ Design & Code by tutran -
       <Link href="/">
-        <a style={{ textDecoration: "underline" }}>tutran.dev</a>
+        <a style={{ textDecoration: "underline" }}>codingAcademy</a>
       </Link>
     </Center>
   );

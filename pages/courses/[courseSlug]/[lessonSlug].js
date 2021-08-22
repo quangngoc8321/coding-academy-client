@@ -1,12 +1,16 @@
+import Head from "next/head";
 import React from "react";
 import LessonDetail from "../../../components/LessonDetail";
 import { ALL_LESSONS, LESSON_DETAIL } from "../../../constants/queryGrapql";
 import client from "../../../libs/apolloClient";
 
 const LessonDetailPage = ({ course, lesson }) => {
-  // console.log(lesson, course);
   return (
     <>
+      <Head>
+        <title>{lesson.name} | codingAcademy</title>
+        <meta name="keywords" content={lesson.name} />
+      </Head>
       <LessonDetail lesson={lesson} course={course} />
     </>
   );

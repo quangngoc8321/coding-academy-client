@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React from "react";
 import CourseDetail from "../../../components/CourseDetail";
 import {
@@ -9,6 +10,10 @@ import client from "../../../libs/apolloClient";
 const CourseDetailPage = ({ course }) => {
   return (
     <>
+      <Head>
+        <title>{course.name} | tutran.dev</title>
+        <meta name="keywords" content={course.name} />
+      </Head>
       <CourseDetail course={course} />
     </>
   );
