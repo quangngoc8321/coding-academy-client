@@ -11,7 +11,7 @@ const redirect = () => {
       const fetUserProfile = async () => {
         try {
           const res = await fetch(
-            `http://localhost:1337/auth/google/callback?access_token=${router.query.access_token}`
+            `${process.env.NEXT_PUBLIC_STRAPI_REST_API}/auth/google/callback?access_token=${router.query.access_token}`
           );
           const data = await res.json();
           const { jwt, user } = data;

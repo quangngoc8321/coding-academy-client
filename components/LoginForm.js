@@ -63,7 +63,11 @@ const LoginForm = () => {
           mt={4}
           colorScheme="teal"
           size="lg"
-          onClick={() => router.push("http://localhost:1337/connect/google")}
+          onClick={() =>
+            router.push(
+              `${process.env.NEXT_PUBLIC_STRAPI_REST_API}/connect/google`
+            )
+          }
         >
           <FaGoogle />
           &ensp;Login with Google
