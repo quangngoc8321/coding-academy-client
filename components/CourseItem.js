@@ -19,7 +19,13 @@ const CourseItem = ({ course, isPaid }) => {
     >
       <Link href={`/courses/${slug}`}>
         <a>
-          <NextImage src={image.url} alt={"title"} width="786" height="443" />
+          <NextImage
+            src={image.url}
+            alt={"title"}
+            width="786"
+            height="443"
+            placeholder="blur"
+          />
         </a>
       </Link>
 
