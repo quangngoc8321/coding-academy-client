@@ -4,6 +4,7 @@
 - Nextjs
 - MongoDB
 - Strapi Headless CMS
+- Apollo Client GraphQL
 - GraphQL + Rest API
 - Stripe Payment
 - Sendgrid
